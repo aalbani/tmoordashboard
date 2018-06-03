@@ -11,9 +11,15 @@
       </v-flex>
       <v-spacer></v-spacer>
       <v-flex d-flex xs12 sm6>
-        <v-card color="indigo darken-1" dark>
-          <v-card-title primary class="title">Lorem</v-card-title>
-          <v-card-text>{{ lorem }}</v-card-text>
+        <v-card color="white" dark>
+          <v-layout row wrap>
+          <v-flex xs6 v-for="region in riyadh" :key="region.regionName">
+            <v-card color="indigo darken-1">
+              <v-card-title primary class="title justify-center">{{region.regionName}}</v-card-title>
+              <v-card-text class="title text-xs-center">{{region.orderCount}}</v-card-text>
+            </v-card>
+          </v-flex>
+          </v-layout>
         </v-card>
       </v-flex>
       <v-flex d-flex xs12 sm6>
@@ -34,7 +40,15 @@
 <script>
   export default {
     data: () => ({
-      lorem: `Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu, alienum argumentum ius ad. Pri eu justo aeque torquatos.`
+      lorem: `Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu, alienum argumentum ius ad. Pri eu justo aeque torquatos.`,
+      riyadh : [
+        {regionName: 'Riyadh North', orderCount: '15'},
+        {regionName: 'Riyadh South', orderCount: '2'},
+        {regionName: 'Riyadh East', orderCount: '33'},
+        {regionName: 'Riyadh West', orderCount: '20'},
+        {regionName: 'Riyadh Mid', orderCount: '9'},
+        {regionName: 'Outside', orderCount: '120'}
+      ]
     })
   }
 </script>
