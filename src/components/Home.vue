@@ -13,6 +13,11 @@
       <v-flex d-flex xs12 sm6>
         <v-card color="white" dark>
           <v-layout row wrap>
+          <v-flex xs12>
+            <v-card color="indigo darken-1">
+              <v-card-title primary class="title justify-center">Orders on hold By Region</v-card-title>
+            </v-card>
+          </v-flex>
           <v-flex xs6 v-for="region in riyadh" :key="region.regionName">
             <v-card color="indigo darken-1">
               <v-card-title primary class="title justify-center">{{region.regionName}}</v-card-title>
