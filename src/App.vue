@@ -13,31 +13,10 @@
         class="grey lighten-4"
       >
         <template v-for="(item, i) in items">
-          <v-layout
-            v-if="item.heading"
-            :key="i"
-            row
-            align-center
-          >
-            <v-flex xs6>
-              <v-subheader v-if="item.heading">
-                {{ item.heading }}
-              </v-subheader>
-            </v-flex>
-            <v-flex xs6 class="text-xs-right">
-              <v-btn small flat>edit</v-btn>
-            </v-flex>
-          </v-layout>
-          <v-divider
-            v-else-if="item.divider"
-            :key="i"
-            dark
-            class="my-3"
-          ></v-divider>
+
           <v-list-tile
-            v-else
             :key="i"
-            @click=""
+            :to="item.link"
           >
             <v-list-tile-action>
               <v-icon>{{ item.icon }}</v-icon>
