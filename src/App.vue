@@ -6,7 +6,6 @@
       clipped
       class="grey lighten-4"
       app
-      right
     >
       <v-list
         dense
@@ -66,7 +65,5 @@
   .text {
     font-weight: 400;
   }
-  #inspire {
-    direction: rtl
-  }
+
 </style>
