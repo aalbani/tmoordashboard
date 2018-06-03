@@ -66,20 +66,12 @@
     data: () => ({
       drawer: null,
       items: [
-        { icon: 'lightbulb_outline', text: 'Notes' },
-        { icon: 'touch_app', text: 'Reminders' },
-        { divider: true },
-        { heading: 'Labels' },
-        { icon: 'add', text: 'Create new label' },
-        { divider: true },
-        { icon: 'archive', text: 'Archive' },
-        { icon: 'delete', text: 'Trash' },
-        { divider: true },
-        { icon: 'settings', text: 'Settings' },
-        { icon: 'chat_bubble', text: 'Trash' },
-        { icon: 'help', text: 'Help' },
-        { icon: 'phonelink', text: 'App downloads' },
-        { icon: 'keyboard', text: 'Keyboard shortcuts' }
+        { icon: 'home', text: 'Home' , link: '/' },
+        { icon: 'local_shipping', text: 'Delivery', link : '/delivery' },
+        { icon: 'list_alt', text: 'Today\'s tasks', link: '/tasks' },
+        { icon: 'history', text: 'History', link: '/history' },
+        { icon: 'face', text: 'Complaints', link: '/complaints' },
+        { icon: 'store_mall_directory', text: 'Manage inventory', link: '/inventory' },
       ]
     }),
   }
