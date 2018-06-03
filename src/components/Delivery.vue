@@ -1,4 +1,5 @@
 <template>
+   <v-container>
   <v-data-table
     v-model="selected"
     :headers="headers"
@@ -49,6 +50,8 @@
       </tr>
     </template>
   </v-data-table>
+   <v-btn block color="primary" dark>Add all selected to Today's tasks</v-btn> 
+   </v-container>
 </template>
 
 <script>

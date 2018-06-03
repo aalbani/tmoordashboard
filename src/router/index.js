@@ -23,7 +23,7 @@ export default new Router({
       component: Tasks
     },
     {
-      path: '/complaintsDelivery',
+      path: '/complaints',
       name: 'Complaints',
       component: Complaints
     },
