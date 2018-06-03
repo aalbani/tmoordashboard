@@ -2,11 +2,11 @@
   <v-data-table
     v-model="selected"
     :headers="headers"
-    :items="desserts"
+    :items="customerTable"
     :pagination.sync="pagination"
     select-all
     item-key="name"
-    class="elevation-1"
+    class="elevation-3"
   >
     <template slot="headers" slot-scope="props">
       <tr>
@@ -45,10 +45,12 @@
         <td class="text-xs-right">{{ props.item.carbs }}</td>
         <td class="text-xs-right">{{ props.item.protein }}</td>
         <td class="text-xs-right">{{ props.item.iron }}</td>
+        <td class="text-xs-right">{{ props.item.iron }}</td>
       </tr>
     </template>
   </v-data-table>
 </template>
+
 <script>
   export default {
     data: () => ({
@@ -58,17 +60,18 @@
       selected: [],
       headers: [
         {
-          text: 'Dessert (100g serving)',
+          text: 'Customer ID',
           align: 'left',
           value: 'name'
         },
-        { text: 'Calories', value: 'calories' },
-        { text: 'Fat (g)', value: 'fat' },
-        { text: 'Carbs (g)', value: 'carbs' },
-        { text: 'Protein (g)', value: 'protein' },
-        { text: 'Iron (%)', value: 'iron' }
+        { text: 'Region', value: 'calories' },
+        { text: 'Order Date', value: 'fat' },
+        { text: 'Order', value: 'carbs' },
+        { text: 'Phone Number', value: 'protein' },
+        { text: 'Neighborhood', value: 'iron' },
+        { text: 'Name', value: 'iron' }
       ],
-      desserts: [
+      customerTable: [
         {
           value: false,
           name: 'Frozen Yogurt',
@@ -165,7 +168,7 @@
     methods: {
       toggleAll () {
         if (this.selected.length) this.selected = []
-        else this.selected = this.desserts.slice()
+        else this.selected = this.customerTable.slice()
       },
       changeSort (column) {
         if (this.pagination.sortBy === column) {
