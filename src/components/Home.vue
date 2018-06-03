@@ -28,15 +28,23 @@
         </v-card>
       </v-flex>
       <v-flex d-flex xs12 sm6>
-        <v-card color="grey darken-3" dark>
-          <v-card-title primary class="title">Lorem</v-card-title>
-          <v-card-text>{{ lorem }}</v-card-text>
+        <v-layout row wrap>
+          <v-flex xs12>
+          <v-card color="grey darken-3" dark>
+            <v-card-title primary class="title justify-center">inventory snapshot</v-card-title>
+          </v-card>
+        </v-flex>
+          <v-flex xs12 v-for="item in inventory" :key="item.type">
+          <v-card color="grey darken-3" dark>
+          <v-card-text>{{item.type}} : <span class="red--text">{{item.remaining}}</span> in inventory</v-card-text>
         </v-card>
+          </v-flex>
+        </v-layout>
       </v-flex>
             <v-flex d-flex xs12 sm6>
         <v-card color="green darken-3" dark>
-          <v-card-title primary class="title">Lorem</v-card-title>
-          <v-card-text>{{ lorem }}</v-card-text>
+          <v-card-title primary class="title justify-center">Today's Tasks</v-card-title>
+          <v-card-title primary class="title justify-center">4/50</v-card-title>
         </v-card>
       </v-flex>
         </v-layout>
@@ -53,6 +61,10 @@
         {regionName: 'Riyadh West', orderCount: '20'},
         {regionName: 'Riyadh Mid', orderCount: '9'},
         {regionName: 'Outside', orderCount: '120'}
+      ],
+      inventory : [
+        {type: 'sokry', remaining: 2},
+        {type: 'khalas', remaining: 3}
       ]
     })
   }
